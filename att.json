@@ -1,0 +1,63 @@
+{
+    "attributes": {
+      "title": "containerID",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "attributes"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": {
+          "index": "metricbeat-*",
+          "highlightAll": true,
+          "version": true,
+          "query": {
+            "query": "",
+            "language": "lucene"
+          },
+          "filter": [
+            {
+              "meta": {
+                "index": "metricbeat-*",
+                "type": "phrases",
+                "key": "docker.container.id",
+                "value": "bda45daacab4e723ebdf15b5df1704f5781e46f6f38eaf33433ba36fc0ec1fd0, c8c216f6686e7cc4a9d6123e26205996d5f7c13497a3108c6e22662d7789d3f9",
+                "params": [
+                  "bda45daacab4e723ebdf15b5df1704f5781e46f6f38eaf33433ba36fc0ec1fd0",
+                  "c8c216f6686e7cc4a9d6123e26205996d5f7c13497a3108c6e22662d7789d3f9"
+                ],
+                "negate": false,
+                "disabled": false,
+                "alias": null
+              },
+              "query": {
+                "bool": {
+                  "should": [
+                    {
+                      "match_phrase": {
+                        "docker.container.id": "bda45daacab4e723ebdf15b5df1704f5781e46f6f38eaf33433ba36fc0ec1fd0"
+                      }
+                    },
+                    {
+                      "match_phrase": {
+                        "docker.container.id": "c8c216f6686e7cc4a9d6123e26205996d5f7c13497a3108c6e22662d7789d3f9"
+                      }
+                    }
+                  ],
+                  "minimum_should_match": 1
+                }
+              },
+              "$state": {
+                "store": "appState"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
